@@ -48,6 +48,8 @@ header .menu a {
 .header-info h1 {
 	font-weight: 1;
 	font-size: 4em;
+
+  text-shadow: 2px 5px 0px rgba(150, 150, 150, 1);
 }
 
 
@@ -179,6 +181,53 @@ hr.line {
 }
 
 
+#section2 {
+  background: url(../imgs/section2bg.jpg) #231f20 no-repeat center center fixed;
+  min-height: 800px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
+#section2 h1 {
+  text-align: center;
+  text-shadow: 2px 2px 0px rgba(150, 150, 150, 1);
+  color: #FFFFFF;
+}
+
+
+#section3 h1 {
+  text-align: center;
+  text-shadow: 2px 2px 0px rgba(150, 150, 150, 1);
+}
+
+.copyright {
+  font-size: 12px;
+  text-align: center;
+  margin: 20 0 auto;
+}
+
+
+
+
+
+/* centered columns styles */
+.centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+.col-centered h2 {
+  text-align: center;
+  color: #FFFFFF;
+}
 
 
