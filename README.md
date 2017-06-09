@@ -1,10 +1,10 @@
-#BOOTSTRAP 4 - Landing Page
+# BOOTSTRAP 4 - Landing Page
 
 I created this to test Bootstrap 4 (I already know Bootstrap 3) and, by the way, make myself a new website to introduce me.
-If you have questions, contact-me at b.tronquoy@gmail.com
+You can contact me at b.tronquoy@gmail.com
 
 
-##Powered by:
+## Powered by:
 
 - HTML5
 - [Bootstrap 4 - Alpha](https://v4-alpha.getbootstrap.com)
