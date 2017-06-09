@@ -8,6 +8,7 @@ You can contact me at b.tronquoy@gmail.com
 
 - HTML5
 - [Bootstrap 4 - Alpha](https://v4-alpha.getbootstrap.com)
+- [Normalize CSS](http://necolas.github.io/normalize.css/)
 - [Animate CSS](https://daneden.github.io/animate.css/)
 - [Hover CSS](https://github.com/IanLunn/Hover)
 - [Font Awesome](http://fontawesome.io/)
