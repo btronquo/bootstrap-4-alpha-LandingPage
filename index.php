@@ -1,3 +1,12 @@
+<?php
+  // Default language
+  $lang = "en";
+  // Retrieve language by GET in url (index.php?lang=xx where xx = choosen language)
+  if(isset($_GET['lang'])){ 
+    $lang = $_GET['lang']; 
+  } 
+  require_once("lang/lang.".$lang.".php");
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,11 +33,13 @@
     		<div class="row">
     					<div class="col-3"><div class="logo-text"><i class="fa fa-code logo-magic fa-2x fa-fw" aria-hidden="true"></i> </div></div>
                 <div class="col-6 menu animated rubberBand">
-                  <a data-scroll href="#skills" class="hvr-float hvr-underline-from-center">Skills</a> |
-                  <a data-scroll href="#projects" class="hvr-float hvr-underline-from-center">Projects</a> |
-                  <a data-scroll href="#contact" class="hvr-float hvr-underline-from-center">Contact</a>
+                  <a data-scroll href="#skills" class="hvr-float hvr-underline-from-center"><?php echo $language["SKILLS"]; ?></a> |
+                  <a data-scroll href="#projects" class="hvr-float hvr-underline-from-center"><?php echo $language["PROJECTS"]; ?></a> |
+                  <a data-scroll href="#contact" class="hvr-float hvr-underline-from-center"><?php echo $language["CONTACT"]; ?></a>
                 </div>
               <div class="col-3 menu">
+                  <a href="index.php?lang=en"><img src="dist/imgs/en.png"></a>
+                  <a href="index.php?lang=fr"><img src="dist/imgs/fr.png"></a>
                   <a target="_blank" href="https://github.com/btronquo" class="hvr-bounce-in"><i class="fa fa-github fa-2x fa-fw animated flip" aria-hidden="true"></i></a>
                   <a href="mailto:b.tronquoy@gmail.com" class="hvr-bounce-in"><i class="fa fa-envelope-o fa-2x fa-fw animated flip" aria-hidden="true"></i></a>
               </div>
@@ -37,9 +48,9 @@
           <!-- Header Prez title -->
           <div class="row header-info">
             <div class="col-6 offset-3">
-              <h3 class="animated fadeIn">Hi! I'm</h3>
+              <h3 class="animated fadeIn"><?php echo $language["HEADERTITLE"]; ?></h3>
               <h1 class="animated fadeIn">Boris Tronquoy</h1>
-              <h3 class="animated bounce">Developper, Programmer & Geek</h3><span class="badge badge-pill badge-primary">Available for hire!</span>
+              <h3 class="animated bounce"><?php echo $language["HEADERUNDER"]; ?></h3><span class="badge badge-pill badge-primary"><?php echo $language["HEADERMINI"]; ?></span>
             </div>
           </div>
           <!-- ./ Header Prez title -->
@@ -56,14 +67,14 @@
         <div class="row">
           <div class="col-md-8 offset-2">
             <hr class="line">
-            <h1><b>S</b>kills</h1>
+            <h1><?php echo $language["SECTION2_SKILLS"]; ?></h1>
           </div>
         </div>
         <div class="row text-center">
           <div class="col-md-4">
           <img class="rounded img-thumbnail" src="http://via.placeholder.com/250x250/1C1D2E">
           <div class = "caption">
-            <h3>Web-Developper</h3>
+            <h3><?php echo $language["SECTION2_POST_WEBDEV"]; ?></h3>
             <p>
             <span class="badge badge-pill badge-primary">NodeJS</span>
             <span class="badge badge-pill badge-primary">PHP 5+</span>
@@ -75,7 +86,7 @@
           <div class="col-md-4">
           <img class="rounded img-thumbnail" src="http://via.placeholder.com/250x250/1C1D2E">
           <div class = "caption">
-            <h3>Software sider</h3>
+            <h3><?php echo $language["SECTION2_POST_SOFT"]; ?></h3>
             <p>
             <span class="badge badge-pill badge-success">Centos7</span>
             <span class="badge badge-pill badge-success">Unbuntu</span>
@@ -87,7 +98,7 @@
           <div class="col-md-4">
             <img class="rounded img-thumbnail" src="http://via.placeholder.com/250x250/1C1D2E">
             <div class = "caption">
-              <h3>Tools Lover</h3>
+              <h3><?php echo $language["SECTION2_POST_TOOLS"]; ?></h3>
               <p>
               <span class="badge badge-pill badge-default">Github</span>
               <span class="badge badge-pill badge-default">Sublime Text</span>
@@ -100,7 +111,7 @@
         <div class="row">
           <div class="col-md-12">
           <hr>
-            <h2 class="text-center">Things I can do</h2>
+            <h2 class="text-center"><?php echo $language["SECTION2_MINITITLE"]; ?></h2>
 
           </div>
           <div class="col-md-4">
@@ -137,30 +148,30 @@
         <div class="row">
           <div class="col-8 offset-2">
           <hr class="line">
-            <h1>Contact</h1>
-            <p>Here, you can let me a message</p>
+            <h1><?php echo $language["SECTION3_TITLE"]; ?></h1>
+            <p><?php echo $language["SECTION3_STITLE"]; ?></p>
             <form>
                 <div class="form-group row">
-                  <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                  <label for="inputEmail3" class="col-sm-2 col-form-label"><?php echo $language["SECTION3_FORM_EMAIL"]; ?></label>
                   <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Your Email" required>
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="<?php echo $language["SECTION3_FORM_EMAIL_PH"]; ?>" required>
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="inputPassword3" class="col-sm-2 col-form-label">Subject</label>
+                  <label for="inputPassword3" class="col-sm-2 col-form-label"><?php echo $language["SECTION3_FORM_SUBJECT"]; ?></label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputText" placeholder="Your Subject" required>
+                    <input type="text" class="form-control" id="inputText" placeholder="<?php echo $language["SECTION3_FORM_SUBJECT_PH"]; ?>" required>
                   </div>
                 </div>
                 <div class="form-group row">
-                <label for="exampleTextarea" class="col-sm-2 col-form-label">Message</label>
+                <label for="exampleTextarea" class="col-sm-2 col-form-label"><?php echo $language["SECTION3_FORM_MESSAGE"]; ?></label>
                 <div class="col-sm-10">
-                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Your Message" required></textarea>
+                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="<?php echo $language["SECTION3_FORM_MESSAGE_PH"]; ?>" required></textarea>
                 </div>
               </div>
                 <div class="form-group row">
                   <div class="offset-sm-2 col-sm-10">
-                    <button type="submit" class="btn btn-primary">Send</button>
+          <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i> <?php echo $language["SECTION3_FORM_SEND"]; ?></button>
                   </div>
                 </div>
               </form>
@@ -170,7 +181,7 @@
 
         <div class="col-12">
         <hr>
-          <p class="copyright">© Copyright 2017 All rights reserved - Design by <kbd>Boris Tronquoy</kbd> - <i class="fa fa-heartbeat" aria-hidden="true"></i> made with love </p>
+          <p class="copyright"><?php echo $language["COPYRIGHT"]; ?></p>
         </div>
 
       <!-- ./container -->
